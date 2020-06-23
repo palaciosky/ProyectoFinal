@@ -31,9 +31,9 @@ if (request.getParameter("signal")!=null) {
     <body>
          <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
         <h1>Agregar Categoria nueva!</h1>
-        <form action="<%= request.getContextPath() %>/categorias" method="post">
+        <form action="<%= request.getContextPath() %>/Categorias" method="post">
            
-            <input type="hidden" name="id-categoria" value="<%= id%>"  >
+            <input type="hidden" name="id_categoria" value="<%= id%>"  >
             <div class="form-group">
                 <label for="txtNomCategoria" class="col-sm-2 control label" >Nombre:</label>
                 <div class="col-sm-10" >

@@ -68,9 +68,17 @@ public class Categorias extends HttpServlet {
         }else if(parametro.equals("modificar")){
              int id_categoria = Integer.parseInt(request.getParameter("id_cat"));
              String nom_categoria = request.getParameter("nombre_cat");
-             int id_estado = Integer.parseInt(request.getParameter("estado_cat"));
+             int estado_categoria = Integer.parseInt(request.getParameter("estado_cat"));
              
-             
+             String pag = "/Vistas-Categorias/crearCategoria.jsp?id_c="+id_categoria+"&&nombre_c="+nom_categoria+"&&estado_c="+estado_categoria+"&&signal=1";
+             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
+             dispatcher.forward(request, response);
+        
+        }else if(parametro.equals("eliminar")){
+            int del_id = Integer.parseInt(request.getParameter("id"));
+            CategoriaDAO catz = new CategoriaDAOImplementarn();
+            catz.borrarCat(del_id);
+            this.listaCategorias(request, response);
         }
         this.listaCategorias(request, response);
     }
