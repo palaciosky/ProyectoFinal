@@ -7,6 +7,7 @@ package Controller;
 
 import DAO.CategoriaDAO;
 import DAO.CategoriaDAOImplementarn;
+import Model.Categoria;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -70,8 +71,36 @@ public class Categorias extends HttpServlet {
     /**
      * Returns a short description of the servlet.
      *
+     * @param request
+     * @param response
      * @return a String containing servlet description
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      */
+    @Override
+    /*
+    
+    */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+           
+        Categoria categoria = new Categoria();
+        int id_categoria = Integer.parseInt(request.getParameter("id_categoria"));
+        String nom_categoria = request.getParameter("txtNomCategoria");
+        int estado_categoria = Integer.parseInt(request.getParameter("txtEstadoCategoria"));
+    
+        categoria.setId_categoria(id_categoria);
+        categoria.setNom_categoria(nom_categoria);
+        categoria.setEstado_categoria(estado_categoria);
+        
+        CategoriaDAO guardarCat = new CategoriaDAOImplementarn();
+        guardarCat.guardarCat(categoria);
+        
+        this.listaCategorias(request, response);
+
+    }
+            
+            
     @Override
     public String getServletInfo() {
         return "Short description";
