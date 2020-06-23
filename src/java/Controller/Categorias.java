@@ -55,6 +55,23 @@ public class Categorias extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String parametro = request.getParameter("opcion");
+        
+        if (parametro.equals("crear")) {
+            String pag = "/Vistas-Categorias/crearCategoria.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
+            dispatcher.forward(request, response);
+        }else if(parametro.equals("listar")){
+            this.listaCategorias(request, response);
+        
+        }else if(parametro.equals("modificar")){
+             int id_categoria = Integer.parseInt(request.getParameter("id_cat"));
+             String nom_categoria = request.getParameter("nombre_cat");
+             int id_estado = Integer.parseInt(request.getParameter("estado_cat"));
+             
+             
+        }
         this.listaCategorias(request, response);
     }
 
@@ -79,6 +96,7 @@ public class Categorias extends HttpServlet {
      */
     @Override
     /*
+    Opcion al crear una nueva categoria
     
     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -17,6 +17,10 @@
         <servlet-name>Categorias</servlet-name>
         <servlet-class>Controller.Categorias</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Producto</servlet-name>
+        <servlet-class>Controller.Producto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -28,6 +32,10 @@
     <servlet-mapping>
         <servlet-name>Categorias</servlet-name>
         <url-pattern>/Categorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Producto</servlet-name>
+        <url-pattern>/Producto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
