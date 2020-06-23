@@ -66,7 +66,7 @@ public class Categorias extends HttpServlet {
             this.listaCategorias(request, response);
         
         }else if(parametro.equals("modificar")){
-             int id_categoria = Integer.parseInt(request.getParameter("id_cat"));
+             int id_categoria = Integer.parseInt(request.getParameter("id"));
              String nom_categoria = request.getParameter("nombre_cat");
              int estado_categoria = Integer.parseInt(request.getParameter("estado_cat"));
              

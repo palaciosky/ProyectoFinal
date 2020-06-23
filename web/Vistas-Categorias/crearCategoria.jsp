@@ -14,10 +14,11 @@ String nombre_cat = "";
 String estado_cat = "";
 
 if (request.getParameter("signal")!=null) {
+        id = request.getParameter("id_c");
         nombre_cat = request.getParameter("nombre_c");
         estado_cat = request.getParameter("estado_c");
     }else{
-    id = String.valueOf(categoria.getId_categoria());//Id definido a cero desde el contructor
+    id = String.valueOf(categoria.getId_categoria());//Id definido a cero desde el constructor
     nombre_cat = categoria.getNom_categoria();
     estado_cat = String.valueOf(categoria.getEstado_categoria());
     }
