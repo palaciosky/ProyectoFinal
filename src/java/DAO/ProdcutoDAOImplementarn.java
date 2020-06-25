@@ -55,14 +55,34 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+   
+
+
     @Override
-    public boolean guardarCat(Producto producto) {
+    public boolean borrarPro(int id_pro_edit) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean borrarCat(int id_pro_edit) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean guardaPro(Producto producto) {
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        boolean guarda = false; //bandera de resultado
+        try{
+            if (producto.getId_producto()== 0) {//Para cuando es una nueva categoria
+            StringBuilder miSQL = new StringBuilder();    
+            //Agregar consulta SQL, el id_categoria es autoincrement
+            miSQL.append("INSERT INTO tb_producto(nom_producto, sotck, precio, unidad_de_medida, estado_producto, categoria) VALUES ('");
+            miSQL.append(producto.getNom_producto()+ "','").append(producto.getStock()+"','").append(producto.getPrecio()+"','").append(producto.getUnidad_de_medida()+"','");
+            miSQL.append(");");
+            //Invoca al diablo perdon digo el metodo para ejecutar la consulta
+            this.conn.ejecutarSQL(miSQL.toString());
+            }else if (producto.getId_producto() > 0){//Actualizar, id_categoira mayores a 0
+            }
+        }catch(Exception e){
+        }finally{
+        this.conn.cerrarConexion();
+        }
+        return guarda;
     }
     
 }

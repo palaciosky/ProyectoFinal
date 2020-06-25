@@ -6,6 +6,6 @@
          Sistema de Control de Inventario
           <a href="Index" class="btn btn-info btn-sm "  role="button" >Inicio</a>
           <a href="Categorias?opcion=listar" class="btn btn-info btn-sm " role="button" >Categorias</a>
-          <a href="Producto" class="btn btn-info btn-sm " role="button" >Productos</a>
+          <a href="Producto?opcion=listar" class="btn btn-info btn-sm " role="button" >Productos</a>
     </div>
     <div class="container shadow p-3 mb-5 bg-white rounded" >

@@ -19,7 +19,7 @@
     </servlet>
     <servlet>
         <servlet-name>Producto</servlet-name>
-        <servlet-class>Controller.Producto</servlet-class>
+        <servlet-class>Controller.Productos</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>

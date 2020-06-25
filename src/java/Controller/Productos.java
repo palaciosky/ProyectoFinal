@@ -7,6 +7,7 @@ package Controller;
 
 import DAO.ProductoDAO;
 import DAO.ProdcutoDAOImplementarn;
+import Model.Producto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Palacios
  */
-public class Producto extends HttpServlet {
+public class Productos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -57,6 +58,17 @@ public class Producto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String parametro = request.getParameter("opcion");
+        
+        if (parametro.equals("crear")) {
+            String pag = "/vistas-productos/crearProductos.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
+            dispatcher.forward(request, response);
+        }else if(parametro.equals("listar")){
+            this.listaProductos(request, response);
+        
+        }
         this.listaProductos(request, response);
     }
 
@@ -71,13 +83,35 @@ public class Producto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        Producto producto = new Producto();
+        int id_producto = Integer.parseInt(request.getParameter("id_producto"));
+        String nom_producto = request.getParameter("txtNomProducto");
+        float stock_producto = Float.parseFloat(request.getParameter("txtStockProducto"));
+        float precio_producto = Float.parseFloat(request.getParameter("txtPrecioProducto"));
+        String unidad_producto = request.getParameter("txtUnidadProducto");
+        int estado_producto = Integer.parseInt(request.getParameter("txtEstadoProducto"));
+        int categoria_producto = Integer.parseInt(request.getParameter("txtCategoriaProducto"));
+    
+        producto.setId_producto(id_producto);
+        producto.setNom_producto(nom_producto);
+        producto.setStock(stock_producto);
+        producto.setPrecio(precio_producto);
+        producto.setUnidad_de_medida(unidad_producto);
+        producto.setEstado_producto(estado_producto);
+        producto.setCategoria_id(categoria_producto);
+        
+        
+        ProductoDAO guardarPro = new ProdcutoDAOImplementarn();
+        guardarPro.guardaPro(producto);
+        
+        this.listaProductos(request, response);
     }
 
     /**
      * Returns a short description of the servlet.
      *
-     * @return a String containing servlet description
+     * @return a String cosntaining servlet description
      */
     @Override
     public String getServletInfo() {
