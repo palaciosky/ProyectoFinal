@@ -23,7 +23,7 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
     public List<Producto> Listar() {
            this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
         StringBuilder miSQL = new StringBuilder();
-        miSQL.append("SELECT * FROM tb_categoria;");
+        miSQL.append("SELECT * FROM tb_producto;");
         List<Producto> lista = new ArrayList<Producto>();
         try{
             //Se crea el objeto ResultSet omplemantando el metodo ConsultaSQL 
@@ -31,10 +31,13 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
             while(resultadoSQL.next()){
             Producto producto = new Producto();//Declara el objeto categoria
             //Asigna a cada campo consultado al atributo de la clase
-            producto.setId_producto(resultadoSQL.getInt("id_categoria"));
-            producto.setNom_producto(resultadoSQL.getString("nom_categoria"));
-            producto.setEstado_categoria(resultadoSQL.getInt("estado_categoria"));
-            lista.add(categoria);//Agrega al arreglo cada registro encontrado
+            producto.setId_producto(resultadoSQL.getInt("id_producto"));
+            producto.setNom_producto(resultadoSQL.getString("nom_producto"));
+            producto.setStock(resultadoSQL.getInt("stock"));
+            producto.setUnidad_de_medida(resultadoSQL.getString("unidad_de_medida"));
+            producto.setEstado_producto(resultadoSQL.getInt("estado_producto"));
+            //producto.setCategoria(resultadoSQL.getInt("categoria"));
+            lista.add(producto);//Agrega al arreglo cada registro encontrado
             }
         }catch(Exception ex){
         this.conn.cerrarConexion();//pa cerrar conexion señores

@@ -5,12 +5,16 @@
  */
 package Controller;
 
+import DAO.ProductoDAO;
+import DAO.ProdcutoDAOImplementarn;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -27,6 +31,18 @@ public class Producto extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    protected void listaCategorias(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        ProductoDAO producto = new ProdcutoDAOImplementarn();
+        //Crear instancia de sesion se le da true para crear la sesion
+        HttpSession sesion = request.getSession(true);
+        sesion.setAttribute("lista", producto.Listar());
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Vistas-Categorias/listarCategorias.jsp");
+        dispatcher.forward(request, response);
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
