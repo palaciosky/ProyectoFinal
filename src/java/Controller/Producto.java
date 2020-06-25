@@ -32,33 +32,18 @@ public class Producto extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    protected void listaCategorias(HttpServletRequest request, HttpServletResponse response)
+    protected void listaProductos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         ProductoDAO producto = new ProdcutoDAOImplementarn();
         //Crear instancia de sesion se le da true para crear la sesion
         HttpSession sesion = request.getSession(true);
-        sesion.setAttribute("lista", producto.Listar());
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Vistas-Categorias/listarCategorias.jsp");
+        sesion.setAttribute("listas", producto.Listar());
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas-productos/listarProductos.jsp");
         dispatcher.forward(request, response);
     }
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Producto</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Producto at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -72,7 +57,7 @@ public class Producto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        this.listaProductos(request, response);
     }
 
     /**
@@ -98,5 +83,11 @@ public class Producto extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
 }
