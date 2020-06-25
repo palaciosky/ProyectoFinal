@@ -72,11 +72,11 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
             StringBuilder miSQL = new StringBuilder();    
             //Agregar consulta SQL, el id_categoria es autoincrement
             miSQL.append("INSERT INTO tb_producto(nom_producto, sotck, precio, unidad_de_medida, estado_producto, categoria) VALUES ('");
-            miSQL.append(producto.getNom_producto()+ "','").append(producto.getStock()+"','").append(producto.getPrecio()+"','").append(producto.getUnidad_de_medida()+"','");
+            miSQL.append(producto.getNom_producto()+ "','").append(producto.getStock()+"','").append(producto.getPrecio()+"','").append(producto.getUnidad_de_medida()+"','").append(producto.getEstado_producto()+"','").append(producto.getCategoria());
             miSQL.append(");");
             //Invoca al diablo perdon digo el metodo para ejecutar la consulta
             this.conn.ejecutarSQL(miSQL.toString());
-            }else if (producto.getId_producto() > 0){//Actualizar, id_categoira mayores a 0
+            }else if (producto.getId_producto() > 0){//Actualizar, id_categoira mayoress a 0
             }
         }catch(Exception e){
         }finally{

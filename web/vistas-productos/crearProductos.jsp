@@ -25,6 +25,10 @@ if (request.getParameter("signal")!=null) {
     id_p = String.valueOf(producto.getId_producto());//Id definido a cero desde el constructor
     nombre_p = producto.getNom_producto();
     stock_p = String.valueOf(producto.getStock());
+    precio_p = String.valueOf(producto.getPrecio());
+    unidad_p = String.valueOf(producto.getUnidad_de_medida());
+    estado_p = String.valueOf(producto.getEstado_producto());
+    cat_p = String.valueOf(producto.getCategoria_id());
     }
 %>
 <html>
@@ -35,7 +39,7 @@ if (request.getParameter("signal")!=null) {
     </head>
     <body>
          <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
-        <h1>Agregar Categoria nueva!</h1>
+        <h1>Agregar Producto Nuevo!</h1>
         <form action="<%= request.getContextPath() %>/Categorias" method="post">
            
             <input type="hidden" name="id_categoria" value="<%= id_p%>"  >
@@ -54,7 +58,7 @@ if (request.getParameter("signal")!=null) {
             </div>
                 
              <div class="form-group">
-                <label for="txtPrecioProducto" class="col-sm-2 control label" >Estado:</label>
+                <label for="txtPrecioProducto" class="col-sm-2 control label" >Precio</label>
                 <div class="col-sm-10" >
                     <input type="text" class="form-control" name="txtPrecioProducto" value="<%= precio_p %>" required />
                 </div>        
@@ -68,7 +72,7 @@ if (request.getParameter("signal")!=null) {
             </div>
             
             <div class="form-group">
-                    <label for="txtEstadoProducto" class="col-sm-2 control label" >Stock</label>
+                    <label for="txtEstadoProducto" class="col-sm-2 control label" >Estado</label>
                 <div class="col-sm-10" >
                     <input type="text" class="form-control" name="txtEstadoProducto" value="<%= estado_p %>" required />
                 </div>        
