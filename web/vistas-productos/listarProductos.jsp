@@ -45,6 +45,7 @@
                         <th> PRECIO </th>
                         <th> U MEDIDA </th>
                         <th> ESTADO </th>
+                        <th> CAT. </th>
                         <th></th>
                     </tr>
                     <% 
@@ -59,9 +60,10 @@
                        <td> <%= producto.getId_producto()%> </td>
                        <td> <%= producto.getNom_producto()%> </td>
                        <td> <%= producto.getStock()%> </td>
-                       <td> <%= producto.getPrecio()%> </td>
+                       <td> $ <%= producto.getPrecio()%> </td>
                        <td> <%= producto.getUnidad_de_medida()%> </td>
                        <td> <%= producto.getEstado_producto()%> </td>
+                        <td> <%= producto.getCategoria_id()%> </td>
                        
                        <td>
                            <a href="#" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 

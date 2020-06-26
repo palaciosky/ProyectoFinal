@@ -23,6 +23,7 @@ public class Producto {
         this.id_producto = 0;
         this.categoria = new Categoria(); //inicia el modelo categoria
         
+        
     }
 
     public Producto(int id_producto, String nom_producto, int categoria_id, float stock, float precio, String unidad_de_medida, int estado_producto, Categoria categoria) {

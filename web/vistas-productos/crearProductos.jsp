@@ -47,7 +47,7 @@ if (request.getParameter("signal")!=null) {
         <h1>Agregar Producto Nuevo!</h1>
         <form action="<%= request.getContextPath() %>/Producto" method="post">
            
-            <input type="hidden" name="id_categoria" value="<%= id_p%>"  >
+            <input type="hidden" name="id_producto" value="<%= id_p%>"  >
             <div class="form-group">
                 <label for="txtNomProducto" class="col-sm-2 control label" >Nombre:</label>
                 <div class="col-sm-10" >

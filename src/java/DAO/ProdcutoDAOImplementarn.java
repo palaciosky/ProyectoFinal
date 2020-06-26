@@ -34,9 +34,10 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
             producto.setId_producto(resultadoSQL.getInt("id_producto"));
             producto.setNom_producto(resultadoSQL.getString("nom_producto"));
             producto.setStock(resultadoSQL.getInt("stock"));
+            producto.setPrecio(resultadoSQL.getFloat("precio"));
             producto.setUnidad_de_medida(resultadoSQL.getString("unidad_de_medida"));
             producto.setEstado_producto(resultadoSQL.getInt("estado_producto"));
-            //producto.setCategoria(resultadoSQL.getInt("categoria"));
+            producto.setCategoria_id(resultadoSQL.getInt("categoria"));
             lista.add(producto);//Agrega al arreglo cada registro encontrado
             }
         }catch(Exception ex){
@@ -71,14 +72,15 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
             if (producto.getId_producto()== 0) {//Para cuando es una nueva categoria
             StringBuilder miSQL = new StringBuilder();    
             //Agregar consulta SQL, el id_categoria es autoincrement
-            miSQL.append("INSERT INTO tb_producto(nom_producto, sotck, precio, unidad_de_medida, estado_producto, categoria) VALUES ('");
-            miSQL.append(producto.getNom_producto()+ "','").append(producto.getStock()+"','").append(producto.getPrecio()+"','").append(producto.getUnidad_de_medida()+"','").append(producto.getEstado_producto()+"','").append(producto.getCategoria());
+            miSQL.append("INSERT INTO tb_producto(nom_producto, stock, precio, unidad_de_medida, estado_producto, categoria) VALUES ('");
+            miSQL.append(producto.getNom_producto()+ "','").append(producto.getStock()+"','").append(producto.getPrecio()+"','").append(producto.getUnidad_de_medida()+"','").append(producto.getEstado_producto()+"','").append(producto.getCategoria_id());
             miSQL.append(");");
             //Invoca al diablo perdon digo el metodo para ejecutar la consulta
             this.conn.ejecutarSQL(miSQL.toString());
             }else if (producto.getId_producto() > 0){//Actualizar, id_categoira mayoress a 0
             }
         }catch(Exception e){
+            System.out.println("Error en la matriz de consulta");
         }finally{
         this.conn.cerrarConexion();
         }
