@@ -71,14 +71,14 @@ public class Productos extends HttpServlet {
         }else if(parametro.equals("modificar")){
             int id_producto = Integer.parseInt(request.getParameter("id_p"));
              String nom_producto = request.getParameter("nombre_p");
-             Float stock_producto = Float.parseFloat(request.getParameter("estado_cat"));
-             Float precio_producto = Float.parseFloat(request.getParameter("estado_cat"));
-             String unidad_producto = request.getParameter("nombre_p");
-             int estado_producto = Integer.parseInt(request.getParameter("id_p"));
-             int categoria_producto = Integer.parseInt(request.getParameter("id_p"));
+             Float stock_producto = Float.parseFloat(request.getParameter("stock_p"));
+             Float precio_producto = Float.parseFloat(request.getParameter("precio_p"));
+             String unidad_producto = request.getParameter("unidad_p");
+             int estado_producto = Integer.parseInt(request.getParameter("estado_p"));
+             int categoria_producto = Integer.parseInt(request.getParameter("cat_p"));
              
              
-             String pag = "/Vistas-Categorias/crearCategoria.jsp?id_p="+id_producto+"&&nombre_o="+nom_producto+"&&stock_o="+stock_producto+"&&precio_o"+precio_producto+"&&unidad_o"+unidad_producto+"&&estado_o"+estado_producto+"&&categoria_o"+categoria_producto+"|&&signal=1";
+             String pag = "/vistas-productos/crearProducto.jsp?id_p="+id_producto+"&&nombre_o="+nom_producto+"&&stock_o="+stock_producto+"&&precio_o"+precio_producto+"&&unidad_o"+unidad_producto+"&&estado_o"+estado_producto+"&&categoria_o"+categoria_producto+"&&signal=1";
              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
              dispatcher.forward(request, response);
         

@@ -21,6 +21,11 @@ if (request.getParameter("signal")!=null) {
         id_p = request.getParameter("id_o");
         nombre_p = request.getParameter("nombre_o");
         stock_p = request.getParameter("stock_o");
+        precio_p = request.getParameter("precio_o");
+        unidad_p = request.getParameter("unidad_o");
+        estado_p = request.getParameter("estado_o");
+        cat_p = request.getParameter("categoria_o");
+        
     }else{
     id_p = String.valueOf(producto.getId_producto());//Id definido a cero desde el constructor
     nombre_p = producto.getNom_producto();
@@ -40,7 +45,7 @@ if (request.getParameter("signal")!=null) {
     <body>
          <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
         <h1>Agregar Producto Nuevo!</h1>
-        <form action="<%= request.getContextPath() %>/Categorias" method="post">
+        <form action="<%= request.getContextPath() %>/Producto" method="post">
            
             <input type="hidden" name="id_categoria" value="<%= id_p%>"  >
             <div class="form-group">
