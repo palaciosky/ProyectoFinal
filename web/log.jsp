@@ -10,8 +10,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@include file="WEB-INF/vistas-parciales/css-js.jspf" %>
     </head>
-    <body>
-        <a href="Index" class="btn btn-info btn-sm "  role="button" >Inicio</a>
+    <body class="text-center" >
+        <form action="action">
+            <h1>Log In</h1>
+            <label for="inputEmail" >Correo Electronico</label>
+            <input type="email"  name="txtEmail" id="inputEmail" placeholder="Correo Electronico">
+            <%-- soy un separador --%>
+            <label for="inputPassword" >Contraseña</label>
+            <input type="password"  name="inputPassword" id="inputPassword" placeholder="Contraseña">
+            
+            <div class="checkbox mb-3">
+        <label>
+          <!--<input type="checkbox" value="remember-me"> Remember me -->
+          <a href="#" title="¿No tienes cuenta?">¿No tienes cuenta? | </a>
+          <a href="#" title="Olvide mi contraseña">Olvidé mi contraseña</a>
+        </label>
+      </div>
+            
+            <input type="submit" class="btn btn-lg btn-default " name="btnEnviar" value="Ingresar" />
+            
+        </form>
     </body>
 </html>
