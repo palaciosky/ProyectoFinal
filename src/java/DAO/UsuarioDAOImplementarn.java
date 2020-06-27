@@ -23,7 +23,7 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
     public ArrayList<Usuario> startSesion(String user, String clave) {
          this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
          StringBuilder miSQL = new StringBuilder();
-        miSQL.append("SELECT * FROM tb_usuario WHERE BINARY correo = '").append(user);
+        miSQL.append("SELECT * FROM tb_usuario WHERE correo = '").append(user);
         miSQL.append("' and clave = ('").append(clave);
         miSQL.append("');");  
         

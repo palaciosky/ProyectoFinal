@@ -13,13 +13,13 @@
         <%@include file="WEB-INF/vistas-parciales/css-js.jspf" %>
     </head>
     <body class="text-center" >
-        <form action="action">
+        <form action="Login" method="POST">
             <h1>Log In</h1>
             <label for="inputEmail" >Correo Electronico</label>
-            <input type="email"  name="txtEmail" id="inputEmail" placeholder="Correo Electronico">
+            <input type="email"  name="inputEmail" id="inputEmails" placeholder="Correo Electronico">
             <%-- soy un separador --%>
             <label for="inputPassword" >Contraseña</label>
-            <input type="password"  name="inputPassword" id="inputPassword" placeholder="Contraseña">
+            <input type="password"  name="inputPassword" id="inputPasswords" placeholder="Contraseña">
             
             <div class="checkbox mb-3">
         <label>
@@ -29,7 +29,7 @@
         </label>
       </div>
             
-            <input type="submit" class="btn btn-lg btn-default " name="btnEnviar" value="Ingresar" />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
             
         </form>
     </body>

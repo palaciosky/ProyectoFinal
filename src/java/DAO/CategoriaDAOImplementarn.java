@@ -6,7 +6,6 @@
 package DAO;
 
 import Model.Categoria;
-import java.util.List;
 import Factory.FactoryConexionDB;
 import Factory.ConexionDB;
 import java.sql.ResultSet;
@@ -23,12 +22,10 @@ public class CategoriaDAOImplementarn implements CategoriaDAO {
     
     public CategoriaDAOImplementarn() {
         //Definir a la db que se conectara por default
-        
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
         
     }
 
-    
-    
     @Override
     public List<Categoria> Listar() {
         this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
@@ -63,7 +60,8 @@ public class CategoriaDAOImplementarn implements CategoriaDAO {
         Categoria categoria = new Categoria();//Objeto categoria para devolver datos
         StringBuilder miSQL = new StringBuilder();//Construye la consulta
         //Agregar la consulta SQL
-        miSQL.append("SELECT * FROM tb_categoria WHERE id_categoria =").append(id_cat_edit);
+        miSQL.append("SELECT * FROM tb_categoria WHERE id_categoria ='").append(id_cat_edit);
+        miSQL.append("';");
         try{// Realiza la consulta
             ResultSet resultadoSQL = this.conn.consultaSQL(miSQL.toString());
             while(resultadoSQL.next()){
@@ -121,5 +119,14 @@ public class CategoriaDAOImplementarn implements CategoriaDAO {
         
     
     }
-    
+    //Probando este tipo de list para corroborar su funcion
+    public static void main(String[] args) {
+        CategoriaDAO categoria = new CategoriaDAOImplementarn();
+           List<Categoria> listar = categoria.Listar();
+        for ( Categoria categoriaListar : listar) {
+            System.out.println("ID: "+categoriaListar.getId_categoria()
+            + " NOMBRE: "+ categoriaListar.getNom_categoria()
+            + " ESTADO: "+categoriaListar.getEstado_categoria());
+        }
+    }
 }
