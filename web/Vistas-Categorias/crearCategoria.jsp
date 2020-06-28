@@ -3,7 +3,15 @@
     Created on : 06-23-2020, 07:24:19 AM
     Author     : Palacios
 --%>
-
+<% 
+      //HttpSession sesion = request.getSession(false);
+      String nombre = (String) session.getAttribute("userd");
+      
+      if(nombre == null){
+            
+            response.sendRedirect("./log.jsp");
+        }else if(nombre!=null){
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:useBean id="categoria" scope="session" class="Model.Categoria" />
@@ -74,3 +82,6 @@ if (request.getParameter("signal")!=null) {
           <%@include file="../WEB-INF/vistas-parciales/pie.jspf" %>               
     </body>
 </html>
+<%
+                }
+   %>

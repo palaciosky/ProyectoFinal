@@ -14,9 +14,9 @@
 <% 
       //HttpSession sesion = request.getSession(false);
       String nombre = (String) session.getAttribute("userd");
-      
+      try{
       if(nombre == null){
-            
+            out.print("<center><h2><font color='blue'> Error Cuatrosientoscuatro...</font><hr><h2></center>");
             response.sendRedirect("log.jsp");
         }else if(nombre!=null){
 %>
@@ -34,4 +34,8 @@
 </html>
 <%
                 }
+      }catch(Exception e){
+      
+          out.print("<center><h2><font color='blue'> Error Cuatrosientoscuatro...</font><hr><h2></center>");
+        }
    %>

@@ -7,7 +7,17 @@
 <%@page import="Model.Categoria"%>
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<% 
+    try {
+      //HttpSession sesion = request.getSession(false);
+      String name = (String) session.getAttribute("userd2");
+      
+      if(name == null){
+            out.print("<center><h2><font color='blue'> ERRORCUATROSIENTOSCUATRO</font><hr><h2></center>");
+            response.sendRedirect("./log.jsp");
+        }else if(name!=null){
+            
+%>
 <%@page import = "Model.Categoria"%><!--Importa el modelo -->
 <!--El id debe ser el mismo que le coloco de nombre a la sesion en el controlador  -->
 <jsp:useBean id = "lista" scope="session" class = "java.util.List"  />
@@ -72,3 +82,9 @@
       <%@include file="../WEB-INF/vistas-parciales/pie.jspf" %>               
     </body>
 </html>
+<%
+          }
+        }catch(Exception e){
+                out.print("<center><h2><font color='blue'> ERRORCUATROSIENTOSCUATRO</font><hr><h2></center>");
+            }
+   %>
