@@ -48,8 +48,11 @@ public class Login extends HttpServlet {
 			String destPage = "log.jsp";
 			
 			if (user != null) {
-				HttpSession session = request.getSession();
-				session.setAttribute("user", user);
+                            String corr = user.getCorreo();
+                            HttpSession session = request.getSession();
+                                //accion que servira para confirmar si este cumple con la sesion
+                                
+				session.setAttribute("userd", corr);
 				destPage = "index.jsp";
 			} else {
 				String message = "Invalid email/password";

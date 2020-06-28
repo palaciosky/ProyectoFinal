@@ -44,7 +44,7 @@ public class UsuarioImplementarn2 {
 
 		if (result.next()) {
 			user = new Usuario();
-			//user.setNombrec(result.getString("fullname"));
+			//user.(result.getString("fullname"));
 			user.setCorreo(email);
 		}
 
