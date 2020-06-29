@@ -68,8 +68,8 @@
                        <td>
                            <a href="#" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 
                            <%--<%= request.getContextPath() %>/Categorias?opcion=modificar&&id=<%= categoria.getId_categoria() %>&&nombre_cat=<%= categoria.getNom_categoria() %>&&estado_cat=<%= categoria.getEstado_categoria() %> --%>
-                           <a href="#" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button" ></a> 
-                           <%--<%= request.getContextPath() %>/Categorias?opcion=eliminar&&id=<%= categoria.getId_categoria() %>--%>
+                           <a href="<%= request.getContextPath() %>/Producto?opcion=eliminar&&id=<%= producto.getId_producto()%>" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button" ></a> 
+                           <%--dd--%>
                        </td>
                     </tr>
                     <%

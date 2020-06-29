@@ -82,6 +82,12 @@ public class Productos extends HttpServlet {
              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
              dispatcher.forward(request, response);
         
+        }else if(parametro.equals("eliminar")){
+            int del_id = Integer.parseInt(request.getParameter("id"));
+            ProductoDAO proz = new ProdcutoDAOImplementarn();
+            proz.borrarPro(del_id);
+            this.listaProductos(request, response);
+        
         }
         this.listaProductos(request, response);
     }

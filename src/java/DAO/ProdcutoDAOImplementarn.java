@@ -61,7 +61,19 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
 
     @Override
     public boolean borrarPro(int id_pro_edit) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        boolean borrar = false;           //Bandera de resultados
+        try{
+            StringBuilder miSQL = new StringBuilder();
+            miSQL.append("DELETE FROM tb_producto WHERE id_producto = ").append(id_pro_edit);
+            this.conn.ejecutarSQL(miSQL.toString());
+            borrar = true;
+        }catch(Exception e){
+            
+        }finally{
+            this.conn.cerrarConexion();  //Cerrar la conexión.
+        }
+        return borrar;
     }
 
     @Override
