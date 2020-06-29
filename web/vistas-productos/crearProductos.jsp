@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:useBean id="producto" scope="session" class="Model.Producto" />
+<jsp:useBean id="producti" scope="session" class="Model.Producto" />
 
 <%
 String id_p= "";
@@ -27,13 +28,13 @@ if (request.getParameter("signal")!=null) {
         cat_p = request.getParameter("categoria_o");
         
     }else{
-    id_p = String.valueOf(producto.getId_producto());//Id definido a cero desde el constructor
-    nombre_p = producto.getNom_producto();
-    stock_p = String.valueOf(producto.getStock());
-    precio_p = String.valueOf(producto.getPrecio());
-    unidad_p = String.valueOf(producto.getUnidad_de_medida());
-    estado_p = String.valueOf(producto.getEstado_producto());
-    cat_p = String.valueOf(producto.getCategoria_id());
+    id_p = String.valueOf(producti.getId_producto());//Id definido a cero desde el constructor
+    nombre_p = producti.getNom_producto();
+    stock_p = String.valueOf(producti.getStock());
+    precio_p = String.valueOf(producti.getPrecio());
+    unidad_p = producti.getUnidad_de_medida();
+    estado_p = String.valueOf(producti.getEstado_producto());
+    cat_p = String.valueOf(producti.getCategoria_id());
     }
 %>
 <html>

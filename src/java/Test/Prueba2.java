@@ -18,13 +18,13 @@ import java.util.List;
 public class Prueba2 {
     public static void main(String[] args) {
         Prueba2 evaluar = new Prueba2();
-        evaluar.listarCategorias();
+        evaluar.listarProductos();
        // evaluar.editarCategoria();
-       // evaluar.guardaCategoria();
+        evaluar.guardaProducto();
         //evaluar.eliminarCategoria();
     }
 
-    private void listarCategorias() {
+    private void listarProductos() {
        ProductoDAO categoria = new ProdcutoDAOImplementarn(); //To change body of generated methods, choose Tools | Templates.
        List<Producto> listar = categoria.Listar();
         System.out.println("LISTADO DE CATEGORIAS");
@@ -36,7 +36,16 @@ public class Prueba2 {
             +" UNIDAD: "+categoriaListar.getUnidad_de_medida());
         }
     }
-
-   
+private void guardaProducto() {
+       ProductoDAO categoria = new ProdcutoDAOImplementarn(); //To change body of generated methods, choose Tools | Templates. 
+       Producto guarda_pro = new Producto();
+       guarda_pro.setNom_producto("Bebidas");
+       guarda_pro.setStock(7);
+       guarda_pro.setPrecio(1);
+       guarda_pro.setUnidad_de_medida("L");
+       guarda_pro.setEstado_producto(1);
+       guarda_pro.setCategoria_id(5);
+       categoria.guardaPro(guarda_pro);
+    }  
     
 }
