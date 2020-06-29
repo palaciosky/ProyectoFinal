@@ -66,10 +66,10 @@
                         <td> <%= producto.getCategoria_id()%> </td>
                        
                        <td>
-                           <a href="#" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 
-                           <%--<%= request.getContextPath() %>/Categorias?opcion=modificar&&id=<%= categoria.getId_categoria() %>&&nombre_cat=<%= categoria.getNom_categoria() %>&&estado_cat=<%= categoria.getEstado_categoria() %> --%>
+                           <a href="<%= request.getContextPath() %>/Producto?opcion=modificar&&id_p=<%= producto.getId_producto() %>&&nombre_p=<%= producto.getNom_producto()%>&&stock_p=<%= producto.getStock() %>&&precio_p=<%= producto.getPrecio()%>&&unidad_p=<%= producto.getUnidad_de_medida()%>&&estado_p=<%= producto.getEstado_producto()%>&&cat_p=<%= producto.getCategoria_id()%>" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 
+                           <%--eeee --%>
                            <a href="<%= request.getContextPath() %>/Producto?opcion=eliminar&&id=<%= producto.getId_producto()%>" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button" ></a> 
-                           <%--dd--%>
+                           <%--cat_p--%>
                        </td>
                     </tr>
                     <%

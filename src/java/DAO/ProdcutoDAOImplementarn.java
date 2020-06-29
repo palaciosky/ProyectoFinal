@@ -52,8 +52,30 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
     }
 
     @Override
-    public Producto editarPro(int id_cat_edit) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Producto editarPro(int id_pro_edit) {
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        Producto producto = new Producto();//Objeto producto para devolver datos
+        StringBuilder miSQL = new StringBuilder();//Construye la consulta
+        //Agregar la consulta SQL
+        miSQL.append("SELECT * FROM tb_producto WHERE id_producto ='").append(id_pro_edit);
+        miSQL.append("';");
+        try{// Realiza la consulta
+            ResultSet resultadoSQL = this.conn.consultaSQL(miSQL.toString());
+            while(resultadoSQL.next()){
+            producto.setId_producto(resultadoSQL.getInt("id_producto"));
+            producto.setNom_producto(resultadoSQL.getString("nom_producto"));
+            producto.setStock(resultadoSQL.getInt("stock"));
+            producto.setPrecio(resultadoSQL.getInt("precio"));
+            producto.setUnidad_de_medida(resultadoSQL.getString("unidad_de_medida"));
+            producto.setEstado_producto(resultadoSQL.getInt("estado_producto"));
+            producto.setCategoria_id(resultadoSQL.getInt("categoria"));
+            }       
+        }catch(Exception ex){
+              
+        }finally{
+        this.conn.cerrarConexion();//esto la cierra
+        }
+        return producto;
     }
 
    

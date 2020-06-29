@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="producto" scope="session" class="Model.Producto" />
+
 <jsp:useBean id="producti" scope="session" class="Model.Producto" />
 
 <%
