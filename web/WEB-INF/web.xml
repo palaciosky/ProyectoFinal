@@ -29,6 +29,10 @@
         <servlet-name>Usuarios</servlet-name>
         <servlet-class>Controller.Usuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Salir</servlet-name>
+        <servlet-class>Controller.Salir</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -52,6 +56,10 @@
     <servlet-mapping>
         <servlet-name>Usuarios</servlet-name>
         <url-pattern>/Usuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Salir</servlet-name>
+        <url-pattern>/Salir</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

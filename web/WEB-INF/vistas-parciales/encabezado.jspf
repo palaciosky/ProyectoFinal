@@ -1,5 +1,23 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+<script lenguage="javascript">
+    function salir(){
+        var mensaje;
+        var opcion = confirm("Advertencia!\n\n¿¿Quieres Salir?");
+        if(opcion == true){
+            mensaje = "Acepte";
+            location.href= "Salir";
+        }else{
+            mensaje = "Cancele";
+            //alert(mensaje);
+        }
+        //alert(mensaje);
+        //Muestro en el elemento con id ejemplo el valor de la variable mensaje.
+        //document.getElementById("ejemplo").innerHTML = mensaje;
+    }
+</script>
+
+
 <% 
       //HttpSession sesion = request.getSession(false);
       String nombre = (String) session.getAttribute("userd");
@@ -18,6 +36,7 @@
           <a href="Categorias?opcion=listar" class="btn btn-info btn-sm " role="button" >Categorias</a>
           <a href="Producto?opcion=listar" class="btn btn-info btn-sm " role="button" >Productos</a>
           <a href="Usuarios" class="btn btn-danger btn-sm " role="button" >Usuarios</a>
+          <a href="#" class="btn btn-danger btn-sm " role="button" onclick="salir();" >Salir</a>
          
     </div>
     <div class="container shadow p-3 mb-5 bg-white rounded" >

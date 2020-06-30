@@ -24,7 +24,14 @@
 %> --%>
 <!DOCTYPE html>
 
-    <body>
+    <body style="background: rgba(246,255,229,1);
+background: -moz-linear-gradient(left, rgba(246,255,229,1) 0%, rgba(255,255,255,1) 28%, rgba(253,255,222,1) 55%, rgba(252,252,199,1) 65%, rgba(253,255,222,1) 91%, rgba(255,255,242,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(246,255,229,1)), color-stop(28%, rgba(255,255,255,1)), color-stop(55%, rgba(253,255,222,1)), color-stop(65%, rgba(252,252,199,1)), color-stop(91%, rgba(253,255,222,1)), color-stop(100%, rgba(255,255,242,1)));
+background: -webkit-linear-gradient(left, rgba(246,255,229,1) 0%, rgba(255,255,255,1) 28%, rgba(253,255,222,1) 55%, rgba(252,252,199,1) 65%, rgba(253,255,222,1) 91%, rgba(255,255,242,1) 100%);
+background: -o-linear-gradient(left, rgba(246,255,229,1) 0%, rgba(255,255,255,1) 28%, rgba(253,255,222,1) 55%, rgba(252,252,199,1) 65%, rgba(253,255,222,1) 91%, rgba(255,255,242,1) 100%);
+background: -ms-linear-gradient(left, rgba(246,255,229,1) 0%, rgba(255,255,255,1) 28%, rgba(253,255,222,1) 55%, rgba(252,252,199,1) 65%, rgba(253,255,222,1) 91%, rgba(255,255,242,1) 100%);
+background: linear-gradient(to right, rgba(246,255,229,1) 0%, rgba(255,255,255,1) 28%, rgba(253,255,222,1) 55%, rgba(252,252,199,1) 65%, rgba(253,255,222,1) 91%, rgba(255,255,242,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6ffe5', endColorstr='#fffff2', GradientType=1 );" >
         <%@include file="WEB-INF/vistas-parciales/encabezado.jspf" %>
         <div class="" >
             <h1>Hola Bienvenido a este Registro  </h1>

@@ -19,7 +19,7 @@
     </head>
     <body>
         <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
-        <div class="container" >
+        <div class="container " >
             <a href="<%= request.getContextPath() %>/Producto?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button"  >Agregar Producto +</a>
             <a onclick="javascript:window.imprimirDIV('ID_DIV');" href="#"  class="btn btn-success btn-sm " role="button" ><span class="glyphicon glyphicon-print"> PDF</span> </a>
              <a href="pdf" class="btn btn-danger btn-sm glyphicon glyphicon-print" role="button"  > Imprimir Reg+</a>
@@ -34,8 +34,8 @@
                 ventanaImpresion.close();
                  }
       </script>
-        <div id="ID_DIV" >
-            <table class="table table-striped"  >
+      <div id="ID_DIV" class="table-responsive" >
+            <table class="table table-striped  "  >
                       
                 
                     <tr>
@@ -57,7 +57,7 @@
                         %>
                     <tr>
                         
-                       <td> <%= producto.getId_producto()%> </td>
+                       <td scope="row" > <%= producto.getId_producto()%> </td>
                        <td> <%= producto.getNom_producto()%> </td>
                        <td> <%= producto.getStock()%> </td>
                        <td> $ <%= producto.getPrecio()%> </td>

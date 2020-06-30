@@ -27,7 +27,7 @@
         <title>Usuarios list</title>
         <%@include file="../WEB-INF/vistas-parciales/css-js.jspf" %>
     </head>
-    <body>
+    <body  >
         <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
         <div  >
             <a href="<%= request.getContextPath() %>/Categorias?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button"  >Agregar Usuario +</a>
@@ -44,7 +44,7 @@
                 ventanaImpresion.close();
                  }
       </script>
-        <div id="ID_DIV" >
+        <div id="ID_DIV" class="table-responsive" >
             <table class="table table-striped"  >
                       
                 
