@@ -1,32 +1,68 @@
-<%-- any content can be specified here e.g.: --%>
+
 <%@ page pageEncoding="UTF-8" %>
 </div>
-<footer id="sticky-footer"  class="py-4 bg-dark text-white-50" >
-<div class="container text-center" >
-    &COPY; Palaciosky TM 
-</div>
-    <br>    
-  
+<!-- Footer -->
+<footer class="page-footer font-small  special-color-dark pt-4 bg-dark">
 
+  <!-- Footer Elements -->
+  <div class="container">
 
+    <!--Grid row-->
     <div class="row">
-        <div class="col-md-6 mb-md-0 mb-5">
 
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">SIS21B (2020) ITCA FEPADE</h5>
-        <p>Guillermo Mauricio Palacios Ortiz (192219) <br>
-            Flor de Maria Carballo Diaz <br>
-            Nelson Willy Ticas
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+
+        <!-- Form -->
+         <p class="text-Left text-white te" >  SIS 21B (2020) ITCA FEPADE </p>
+        <p class="text-Left text-white" >
+       
+            Guillermo Mauricio Palacios Ortiz (192219) <br>
+             Flor de Maria Carballo Diaz <br>
+             Nelson Willy Ticas <br>
+            
         </p>
+        <!-- Form -->
 
       </div>
-     <div class="col-md-6 mt-md-1 mb-5">
+      <!--Grid column-->
 
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Extras</h5>
-        <p>FAQ</p>
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+
+         <p class="text-Right text-white te" >   EXTRAS </p>
+        <p class="text-Right text-white" >
+       
+            <a href="#" class="text-white t"  ><i>Acerca</i></a> <br>
+            <a href="#" class="text-white" >Usted Accede como: <%= usuar %> </a>
+            
+            
+        </p>
+         <p class="navbar-text pull-right">
+                
+            </p>
 
       </div>
-        </div>
-              <br> 
-    </footer>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white py-3">© 2020 Palaciosky
+   
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<%
+                }
+      }catch(Exception e){
+      
+          out.print("<center><h2><font color='blue'> Error Cuatrosientoscuatro...</font><hr><h2></center>");
+        }
+   %>

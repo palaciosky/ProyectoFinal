@@ -50,14 +50,18 @@ public class Login extends HttpServlet {
 			if (user != null) {
                             String corr = user.getCorreo();
                             String pass = user.getClave();
-                            String contal =corr+pass;
+                            String name = user.getNombre();
+                            String ape = user.getApellido();
                             
-                            String contal2 = corr+pass;
+                            String contal =corr+pass;
+                            String nameto = name+ape;
+                            String contal2 = corr;
                             HttpSession session = request.getSession();
                                 //accion que servira para confirmar si este cumple con la sesion
                                 
 				session.setAttribute("userd", contal);
                                 session.setAttribute("userd2", contal2);
+                                session.setAttribute("name", nameto);
 				destPage = "index.jsp";
 			} else {
 				String message = "Invalid email/password";
