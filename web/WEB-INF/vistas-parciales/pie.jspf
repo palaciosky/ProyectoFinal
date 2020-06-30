@@ -3,6 +3,30 @@
 </div>
 <footer id="sticky-footer"  class="py-4 bg-dark text-white-50" >
 <div class="container text-center" >
-    &COPY; Palaciosky TM
+    &COPY; Palaciosky TM 
 </div>
+    <br>    
+  
+
+
+    <div class="row">
+        <div class="col-md-6 mb-md-0 mb-5">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold">SIS21B (2020) ITCA FEPADE</h5>
+        <p>Guillermo Mauricio Palacios Ortiz (192219) <br>
+            Flor de Maria Carballo Diaz <br>
+            Nelson Willy Ticas
+        </p>
+
+      </div>
+     <div class="col-md-6 mt-md-1 mb-5">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold">Extras</h5>
+        <p>FAQ</p>
+
+      </div>
+        </div>
+              <br> 
     </footer>

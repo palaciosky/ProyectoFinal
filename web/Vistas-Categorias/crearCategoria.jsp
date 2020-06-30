@@ -37,7 +37,7 @@ if (request.getParameter("signal")!=null) {
         <title>JSP Page</title>
          <%@include file="../WEB-INF/vistas-parciales/css-js.jspf" %>
     </head>
-    <body>
+    <body class="d-flex flex-column" >
          <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
         <h1>Agregar Categoria nueva!</h1>
         <form action="<%= request.getContextPath() %>/Categorias" method="post">

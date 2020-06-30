@@ -19,7 +19,7 @@
     </head>
     <body>
         <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
-        <div  >
+        <div class="container" >
             <a href="<%= request.getContextPath() %>/Producto?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button"  >Agregar Producto +</a>
             <a onclick="javascript:window.imprimirDIV('ID_DIV');" href="#"  class="btn btn-success btn-sm " role="button" ><span class="glyphicon glyphicon-print"> PDF</span> </a>
              <a href="pdf" class="btn btn-danger btn-sm glyphicon glyphicon-print" role="button"  > Imprimir Reg+</a>
@@ -78,8 +78,10 @@
 
                 </table>
         </div>
-
+                    
         </div>
+                    
+                    
       <%@include file="../WEB-INF/vistas-parciales/pie.jspf" %>               
     </body>
 </html>
