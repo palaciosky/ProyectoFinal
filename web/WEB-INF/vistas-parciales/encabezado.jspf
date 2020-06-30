@@ -7,5 +7,6 @@
           <a href="Index" class="btn btn-info btn-sm "  role="button" >Inicio</a>
           <a href="Categorias?opcion=listar" class="btn btn-info btn-sm " role="button" >Categorias</a>
           <a href="Producto?opcion=listar" class="btn btn-info btn-sm " role="button" >Productos</a>
+          <a href="Usuarios" class="btn btn-danger btn-sm " role="button" >Usuarios</a>
     </div>
     <div class="container shadow p-3 mb-5 bg-white rounded" >

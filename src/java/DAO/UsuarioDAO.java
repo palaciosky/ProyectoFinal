@@ -7,6 +7,7 @@ package DAO;
 
 import Model.Usuario;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,9 @@ import java.util.ArrayList;
  */
 public interface UsuarioDAO {
      public ArrayList<Usuario> startSesion(String user, String clave);
+     public List<Usuario> Listar();
+    public List<Usuario> Listar2();
+    public Usuario editarPro(int id_pro_edit);
+    public boolean guardaPro(Usuario usuario);
+    public boolean borrarPro(int id_pro_edit);
 }
