@@ -104,7 +104,7 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
         this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
         boolean guarda = false; //bandera de resultado
         try{
-            if (producto.getId_producto()== 0) {//Para cuando es una nueva categoria
+            if (usuario.getId_producto()== 0) {//Para cuando es una nueva categoria
             StringBuilder miSQL = new StringBuilder();    
             //Agregar consulta SQL, el id_categoria es autoincrement
             miSQL.append("INSERT INTO tb_producto(nom_producto, stock, precio, unidad_de_medida, estado_producto, categoria) VALUES ('");
