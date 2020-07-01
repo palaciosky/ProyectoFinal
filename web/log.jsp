@@ -1,9 +1,3 @@
-<%-- 
-    Document   : log
-    Created on : 06-26-2020, 03:42:59 PM
-    Author     : Palacios
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,26 +5,35 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%@include file="WEB-INF/vistas-parciales/css-js.jspf" %>
-    </head>
-    <body class="text-center" >
-        <form action="Login" method="POST">
-            <h1>Log In</h1>
-            <label for="inputEmail" >Correo Electronico</label>
-            <input type="email"  name="inputEmail" id="inputEmails" placeholder="Correo Electronico">
-            <%-- soy un separador --%>
-            <label for="inputPassword" >Contraseña</label>
-            <input type="password"  name="inputPassword" id="inputPasswords" placeholder="Contraseña">
-            
-            <div class="checkbox mb-3">
-        <label>
-          <!--<input type="checkbox" value="remember-me"> Remember me -->
-          <a href="#" title="¿No tienes cuenta?">¿No tienes cuenta? | </a>
-          <a href="#" title="Olvide mi contraseña">Olvidé mi contraseña</a>
-        </label>
-      </div>
-            
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-            
-        </form>
-    </body>
+     </head>
+    <body>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="img/user.png" th:src="img/user.png}"/>
+                    
+                </div>
+                <form class="col-12" action="Login" method="POST">
+                    <div class="form-group" id="user-group">
+                        <input type="text" name="inputEmail" class="form-control" placeholder="Correo" />
+                    </div>
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password" name="inputPassword" class="form-control" placeholder="Contrasea" />
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+                </form>
+                <div class="col-12 forgot">
+                    <a href="#">Recordar contrasena?</a>
+                </div>
+                <div th:if="${param.error}" class="alert alert-danger" role="alert">
+		            Invalid username and password.
+		        </div>
+		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+		            You have been logged out.
+		        </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
