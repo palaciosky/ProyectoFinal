@@ -124,7 +124,7 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
 
     @Override
     public boolean borrarPro(int id_pro_edit) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not sggupporhhted yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
