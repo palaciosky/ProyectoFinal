@@ -101,7 +101,25 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
 
     @Override
     public boolean guardaPro(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        boolean guarda = false; //bandera de resultado
+        try{
+            if (producto.getId_producto()== 0) {//Para cuando es una nueva categoria
+            StringBuilder miSQL = new StringBuilder();    
+            //Agregar consulta SQL, el id_categoria es autoincrement
+            miSQL.append("INSERT INTO tb_producto(nom_producto, stock, precio, unidad_de_medida, estado_producto, categoria) VALUES ('");
+            miSQL.append(producto.getNom_producto()+ "','").append(producto.getStock()+"','").append(producto.getPrecio()+"','").append(producto.getUnidad_de_medida()+"','").append(producto.getEstado_producto()+"','").append(producto.getCategoria_id());
+            miSQL.append("')");
+            //Invoca al diablo perdon digo el metodo para ejecutar la consulta
+            this.conn.ejecutarSQL(miSQL.toString());
+            }else if (producto.getId_producto() > 0){//Actualizar, id_categoira mayoress a 0
+            }
+        }catch(Exception e){
+            System.out.println("Error en la matriz de consulta");
+        }finally{
+        this.conn.cerrarConexion();
+        }
+        return guarda;
     }
 
     @Override
