@@ -39,6 +39,7 @@ public class Categorias extends HttpServlet {
         //Crear instancia de sesion se le da true para crear la sesion
         HttpSession sesion = request.getSession(true);
         sesion.setAttribute("lista", categoria.Listar());
+        
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Vistas-Categorias/listarCategorias.jsp");
         dispatcher.forward(request, response);
     }

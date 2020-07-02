@@ -45,6 +45,8 @@ public class Productos extends HttpServlet {
     }
     
     
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -78,7 +80,7 @@ public class Productos extends HttpServlet {
              int categoria_producto = Integer.parseInt(request.getParameter("cat_p"));
              
              
-             String pag = "/vistas-productos/crearProductos.jsp?id_o="+id_producto+"&&nombre_o="+nom_producto+"&&stock_o="+stock_producto+"&&precio_o"+precio_producto+"&&unidad_o"+unidad_producto+"&&estado_o"+estado_producto+"&&categoria_o"+categoria_producto+"&&signal=1";
+             String pag = "/vistas-productos/crearProductos.jsp?id_o="+id_producto+"&&nombre_o="+nom_producto+"&&stock_o="+stock_producto+"&&precio_o"+precio_producto+"&&unidad_o"+unidad_producto+"&&estado_o"+estado_producto+"&&categoria_o"+categoria_producto+"&&señal=1";
              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
              dispatcher.forward(request, response);
         

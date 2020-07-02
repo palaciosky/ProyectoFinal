@@ -3,11 +3,17 @@
     Created on : 06-23-2020, 07:24:19 AM
     Author     : Palacios
 --%>
+<%@page import="java.util.List"%>
+<%@page import="DAO.CategoriaDAOImplementarn"%>
+<%@page import="DAO.CategoriaDAO"%>
+<%@page import="Model.Categoria"%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <jsp:useBean id="producti" scope="session" class="Model.Producto" />
+
 
 <%
 String id_p= "";
@@ -18,7 +24,7 @@ String unidad_p = "";
 String estado_p = "";
 String cat_p = "";
 
-if (request.getParameter("signal")!=null) {
+if (request.getParameter("señal")!=null) {
         id_p = request.getParameter("id_o");
         nombre_p = request.getParameter("nombre_o");
         stock_p = request.getParameter("stock_o");
@@ -87,14 +93,28 @@ if (request.getParameter("signal")!=null) {
             <div class="form-group">
                 <label for="txtCategoriaProducto" class="col-sm-2 control label" >Categoria</label>
                 <div class="col-sm-10" >
-                    <input type="text" class="form-control" name="txtCategoriaProducto" value="<%= cat_p %>" required />
+                    <select class="form-control" >    
+                        <% 
+                        CategoriaDAO categoria = new CategoriaDAOImplementarn();
+                        List<Categoria> catz = categoria.Listar();
+                       
+                        for(Categoria categoriaListar : catz){
+                            
+                        %>
+                        <option value="<%= categoriaListar.getId_categoria() %>" ><%= categoriaListar.getNom_categoria() %></option>
+                        <%
+                        }
+                
+                        %>
+                    
+                    </select>
                 </div>        
             </div>
                 
             <div>
                 <div class="col-sm-offset-2 col-sm-10">
                     <%
-                       if (request.getParameter("signal")!=null) {
+                       if (request.getParameter("señal")!=null) {
                     %>
                     <input type="submit" class="btn btn-default btn-sm" name="btnEditar" value="Editar"/>
                     <%

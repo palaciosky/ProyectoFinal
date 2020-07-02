@@ -64,8 +64,8 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
             while(resultadoSQL.next()){
             producto.setId_producto(resultadoSQL.getInt("id_producto"));
             producto.setNom_producto(resultadoSQL.getString("nom_producto"));
-            producto.setStock(resultadoSQL.getInt("stock"));
-            producto.setPrecio(resultadoSQL.getInt("precio"));
+            producto.setStock(resultadoSQL.getFloat("stock"));
+            producto.setPrecio(resultadoSQL.getFloat("precio"));
             producto.setUnidad_de_medida(resultadoSQL.getString("unidad_de_medida"));
             producto.setEstado_producto(resultadoSQL.getInt("estado_producto"));
             producto.setCategoria_id(resultadoSQL.getInt("categoria"));
