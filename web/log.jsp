@@ -3,13 +3,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Session</title>
         <%@include file="WEB-INF/vistas-parciales/css-js.jspf" %>
      </head>
     <body style="
           /* Ubicación de la imagen */
 
-background-image: url(img/background.jpg);
+background-image: url(img/flog.jpeg);
 
 /* Para dejar la imagen de fondo centrada, vertical y
 
@@ -42,7 +42,7 @@ background-color: #66999;
                 <div class="col-12 user-img">
                     <img src="img/user.png" th:src="img/user.png}"/>
                     
-                    <h1 style="filter: blur(6px);" >Bienvenido!</h1>
+                    <h1  >Bienvenido!</h1>
                 </div>
                 <form class="col-12" action="Login" method="POST" >
                     <div class="form-group" id="user-group"  >

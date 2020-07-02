@@ -57,6 +57,7 @@
                         <th> PASSWORD </th>
                         <th> PREGUNTA </th>
                         <th> REPUESTA </th>
+                        <th> FECHA R </th>
                         <th></th>
                     </tr>
                     <% 
@@ -76,6 +77,7 @@
                        <td><%= usuario.getClave()%></td>
                        <td><%= usuario.getPregunta()%></td>
                        <td><%= usuario.getRespuesta()%></td>
+                       <td><%= usuario.getFecharegistro()%></td>
                        
                        <td>
                            <a href="#" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 

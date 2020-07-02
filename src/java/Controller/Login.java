@@ -54,7 +54,7 @@ public class Login extends HttpServlet {
                             String ape = user.getApellido();
                             
                             String contal =corr+pass;
-                            String nameto = name+ape;
+                            String nameto = name+" "+ape;
                             String contal2 = corr;
                             HttpSession session = request.getSession();
                                 //accion que servira para confirmar si este cumple con la sesion

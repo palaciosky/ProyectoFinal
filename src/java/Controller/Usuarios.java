@@ -7,6 +7,7 @@ package Controller;
 
 import DAO.UsuarioDAO;
 import DAO.UsuarioDAOImplementarn;
+import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -68,7 +69,37 @@ public class Usuarios extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        Usuario usuario = new Usuario();
+        int id_usuario = Integer.parseInt(request.getParameter("id_categoria"));
+        String nom_u = request.getParameter("txtNomCategoria");
+        String ape_u = request.getParameter("txtEstadoCategoria");
+        String cor_u = request.getParameter("");
+        String us_u = request.getParameter("");
+        String cla_u = request.getParameter("");
+        int t_u = Integer.parseInt(request.getParameter(""));
+        int e_u = Integer.parseInt(request.getParameter(""));
+        String pr_u = request.getParameter("");
+        String re_u = request.getParameter("");
+        
+        usuario.setId(id_usuario);
+        usuario.setNombre(nom_u);
+        usuario.setApellido(ape_u);
+        usuario.setCorreo(cor_u);
+        usuario.setUsuario(us_u);
+        usuario.setClave(cla_u);
+        usuario.setTipo(t_u);
+        usuario.setEstado(e_u);
+        usuario.setPregunta(pr_u);
+        usuario.setRespuesta(re_u);
+        
+        UsuarioDAO guardarUs = new UsuarioDAOImplementarn();
+        guardarUs.guardaPro(usuario);
+        
+   
         this.listaUsuarios(request, response);
+   
+    
     }
 
     /**

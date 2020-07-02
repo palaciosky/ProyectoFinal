@@ -81,6 +81,7 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
             usuario.setEstado(resultadoSQL.getInt("estado"));
             usuario.setPregunta(resultadoSQL.getString("pregunta"));
             usuario.setRespuesta(resultadoSQL.getString("repuesta"));
+            usuario.setFecharegistro(resultadoSQL.getString("f_registro"));
             lista.add(usuario);//Agrega al arreglo cada registro encontrado
             }
         }catch(Exception ex){
