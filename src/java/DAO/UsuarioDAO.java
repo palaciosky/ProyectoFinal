@@ -18,6 +18,6 @@ public interface UsuarioDAO {
      public List<Usuario> Listar();
     public List<Usuario> Listar2();
     public Usuario editarPro(int id_pro_edit);
-    public boolean guardaPro(Usuario usuario);
+    public boolean guardaUs(Usuario usuario);
     public boolean borrarPro(int id_pro_edit);
 }

@@ -55,6 +55,16 @@ public class Usuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String parametro = request.getParameter("opcion");
+        
+        if (parametro.equals("crear")) {
+            String pag = "/Vistas-Usuarios/crearUsuarios.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
+            dispatcher.forward(request, response);
+        }else if(parametro.equals("listar")){
+            this.listaUsuarios(request, response);
+        }
+        
         this.listaUsuarios(request, response);
     }
 
@@ -71,16 +81,16 @@ public class Usuarios extends HttpServlet {
             throws ServletException, IOException {
         
         Usuario usuario = new Usuario();
-        int id_usuario = Integer.parseInt(request.getParameter("id_categoria"));
-        String nom_u = request.getParameter("txtNomCategoria");
-        String ape_u = request.getParameter("txtEstadoCategoria");
-        String cor_u = request.getParameter("");
-        String us_u = request.getParameter("");
-        String cla_u = request.getParameter("");
-        int t_u = Integer.parseInt(request.getParameter(""));
-        int e_u = Integer.parseInt(request.getParameter(""));
-        String pr_u = request.getParameter("");
-        String re_u = request.getParameter("");
+        int id_usuario = Integer.parseInt(request.getParameter("id_us"));
+        String nom_u = request.getParameter("txtNomUs");
+        String ape_u = request.getParameter("txtApeUs");
+        String cor_u = request.getParameter("txtCorUs");
+        String us_u = request.getParameter("txtusrUs");
+        String cla_u = request.getParameter("txtclUs");
+        int t_u = Integer.parseInt(request.getParameter("txttpUs"));
+        int e_u = Integer.parseInt(request.getParameter("txtesUs"));
+        String pr_u = request.getParameter("txtprUs");
+        String re_u = request.getParameter("txtreUs");
         
         usuario.setId(id_usuario);
         usuario.setNombre(nom_u);
@@ -94,7 +104,7 @@ public class Usuarios extends HttpServlet {
         usuario.setRespuesta(re_u);
         
         UsuarioDAO guardarUs = new UsuarioDAOImplementarn();
-        guardarUs.guardaPro(usuario);
+        guardarUs.guardaUs(usuario);
         
    
         this.listaUsuarios(request, response);

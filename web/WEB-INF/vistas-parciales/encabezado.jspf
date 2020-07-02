@@ -61,7 +61,7 @@
           <a href="Producto?opcion=listar" class=" nav-link  btn btn-outline-secondary " role="button" >Productos</a>
         </li>
         <li class="nav-item active ">
-            <a href="Usuarios" class=" nav-link  btn btn-outline-secondary " role="button" >Usuarios</a><br>
+            <a href="Usuarios?opcion=listar" class=" nav-link  btn btn-outline-secondary " role="button" >Usuarios</a><br>
         </li>
        
         <li class="nav-item  ">

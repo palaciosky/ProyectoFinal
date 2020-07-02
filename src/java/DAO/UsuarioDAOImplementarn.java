@@ -101,15 +101,15 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
     }
 
     @Override
-    public boolean guardaPro(Usuario usuario) {
+    public boolean guardaUs(Usuario usuario) {
         this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
         boolean guarda = false; //bandera de resultado
         try{
             if (usuario.getId()== 0) {//Para cuando es una nueva categoria
             StringBuilder miSQL = new StringBuilder();    
             //Agregar consulta SQL, el id_categoria es autoincrement
-            miSQL.append("INSERT INTO tb_usuario(nombre_u, apellido_u, correo, usuario, clave, estado, pregunta, repuesta) VALUES ('");
-            miSQL.append(usuario.getNombre()+"','").append(usuario.getApellido()+"','").append(usuario.getCorreo()+"','").append(usuario.getCorreo()+"','").append(usuario.getUsuario()+"','").append(usuario.getClave()+"','").append(usuario.getEstado()+"','").append(usuario.getPregunta()+"','").append(usuario.getRespuesta());
+            miSQL.append("INSERT INTO tb_usuario(nombre_u, apellido_u, correo, usuario, clave, tipo, estado, pregunta, repuesta) VALUES ('");
+            miSQL.append(usuario.getNombre()+"','").append(usuario.getApellido()+"','").append(usuario.getCorreo()+"','").append(usuario.getUsuario()+"','").append(usuario.getClave()+"','").append(usuario.getTipo()+"','").append(usuario.getEstado()+"','").append(usuario.getPregunta()+"','").append(usuario.getRespuesta());
             miSQL.append("')");
             //Invoca al diablo perdon digo el metodo para ejecutar la consulta
             this.conn.ejecutarSQL(miSQL.toString());
