@@ -7,17 +7,7 @@
 <%@page import="Model.Usuario"%>
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% 
-    try {
-      //HttpSession sesion = request.getSession(false);
-      String name = (String) session.getAttribute("userd");
-      
-      if(name == null){
-            out.print("<center><h2><font color='blue'> ERRORCUATROSIENTOSCUATRO</font><hr><h2></center>");
-            response.sendRedirect("./log.jsp");
-        }else if(name!=null){
-            
-%>
+
 
 <!--El id debe ser el mismo que le coloco de nombre a la sesion en el controlador  -->
 <jsp:useBean id = "listass" scope="session" class = "java.util.List"  />
@@ -80,10 +70,10 @@
                        <td><%= usuario.getFecharegistro()%></td>
                        
                        <td>
-                           <a href="#" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 
-                           <%-- <%= request.getContextPath() %>/Categorias?opcion=modificar&&id=<%= categoria.getId_categoria() %>&&nombre_cat=<%= categoria.getNom_categoria() %>&&estado_cat=<%= categoria.getEstado_categoria() %> PENDIENTE  --%>
-                           <a href="#" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button" ></a> 
-                           <%-- <%= request.getContextPath() %>/Categorias?opcion=eliminar&&id=<%= categoria.getId_categoria() %> PENDIENTE --%>
+                           <a href="<%= request.getContextPath() %>/Usuarios?opcion=modificar&&id_us=<%= usuario.getId()%>&&nombre_us=<%= usuario.getNombre()%>&&apellido_us=<%= usuario.getApellido()%>&&correo_us=<%= usuario.getCorreo()%>&&usuario_us=<%= usuario.getUsuario()%>&&clave_us=<%= usuario.getClave()%>&&tipo_us=<%= usuario.getTipo()%>&&estado_us=<%= usuario.getEstado()%>&&preg_us=<%= usuario.getPregunta()%>&&resp_us=<%= usuario.getRespuesta()%>" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 
+                           <%--  PENDIENTE  --%>
+                           <a href="<%= request.getContextPath() %>/Usuarios?opcion=eliminar&&id=<%= usuario.getId()%>" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button" ></a> 
+                           <%--  PENDIENTE --%>
                        </td>
                     </tr>
                     <%
@@ -97,9 +87,3 @@
       <%@include file="../WEB-INF/vistas-parciales/pie.jspf" %>               
     </body>
 </html>
-<%
-          }
-        }catch(Exception e){
-                out.print("<center><h2><font color='blue'> ERRORCUATROSIENTOSCUATRO</font><hr><h2></center>");
-            }
-   %>

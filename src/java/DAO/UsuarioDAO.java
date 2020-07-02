@@ -17,7 +17,7 @@ public interface UsuarioDAO {
      public ArrayList<Usuario> startSesion(String user, String clave);
      public List<Usuario> Listar();
     public List<Usuario> Listar2();
-    public Usuario editarPro(int id_pro_edit);
+    public Usuario editarUs(int id_pro_edit);
     public boolean guardaUs(Usuario usuario);
-    public boolean borrarPro(int id_pro_edit);
+    public boolean borrarUs(int id_us_edit);
 }

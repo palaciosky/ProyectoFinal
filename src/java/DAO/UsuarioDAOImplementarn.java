@@ -96,8 +96,34 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
     }
 
     @Override
-    public Usuario editarPro(int id_pro_edit) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Usuario editarUs(int id_us_edit) {
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        Usuario usuario = new Usuario();//Objeto categoria para devolver datos
+        StringBuilder miSQL = new StringBuilder();//Construye la consulta
+        //Agregar la consulta SQL
+        miSQL.append("SELECT * FROM tb_usuario WHERE id_usuario ='").append(id_us_edit);
+        miSQL.append("';");
+        try{// Realiza la consulta
+            ResultSet resultadoSQL = this.conn.consultaSQL(miSQL.toString());
+            while(resultadoSQL.next()){
+            usuario.setId(resultadoSQL.getInt("id_usuario"));
+            usuario.setNombre(resultadoSQL.getString("nombre_u"));
+            usuario.setApellido(resultadoSQL.getString("apellido_u"));
+            usuario.setCorreo(resultadoSQL.getString("correo"));
+            usuario.setUsuario(resultadoSQL.getString("usuario"));
+            usuario.setClave(resultadoSQL.getString("clave"));
+            usuario.setTipo(resultadoSQL.getInt("tipo"));
+            usuario.setEstado(resultadoSQL.getInt("estado"));
+            usuario.setPregunta(resultadoSQL.getString("pregunta"));
+            usuario.setRespuesta(resultadoSQL.getString("repuesta"));
+            
+            }       
+        }catch(Exception ex){
+              
+        }finally{
+        this.conn.cerrarConexion();//esto la cierra
+        }
+        return usuario;
     }
 
     @Override
@@ -124,8 +150,20 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
     }
 
     @Override
-    public boolean borrarPro(int id_pro_edit) {
-        throw new UnsupportedOperationException("Not sggupporhhted yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean borrarUs(int id_us_edit) {
+        this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        boolean borrar = false;           //Bandera de resultados
+        try{
+            StringBuilder miSQL = new StringBuilder();
+            miSQL.append("DELETE FROM tb_usuario WHERE id_usuario = ").append(id_us_edit);
+            this.conn.ejecutarSQL(miSQL.toString());
+            borrar = true;
+        }catch(Exception e){
+            
+        }finally{
+            this.conn.cerrarConexion();  //Cerrar la conexión.
+        }
+        return borrar;
     }
     
     

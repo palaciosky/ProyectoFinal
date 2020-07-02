@@ -61,9 +61,34 @@ public class Usuarios extends HttpServlet {
             String pag = "/Vistas-Usuarios/crearUsuarios.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
             dispatcher.forward(request, response);
+            
         }else if(parametro.equals("listar")){
             this.listaUsuarios(request, response);
+            
+        }else if(parametro.equals("modificar")){
+             int id_user = Integer.parseInt(request.getParameter("id_us"));
+             String nom_user = request.getParameter("nombre_us");
+             String ape_user = request.getParameter("apellido_us");
+             String correo = request.getParameter("correo_us");
+             String user_user = request.getParameter("usuario_us"); 
+             String clave = request.getParameter("clave_us"); 
+             int tipo = Integer.parseInt(request.getParameter("tipo_us"));
+             int estado = Integer.parseInt(request.getParameter("estado_us"));
+             String pregunta = request.getParameter("preg_us"); 
+             String repuesta = request.getParameter("resp_us"); 
+             
+             String pag = "/Vistas-Usuarios/crearUsuarios.jsp?id_u="+id_user+"&&nombre_u="+nom_user+"&&apellido_u="+ape_user+"&&correo_u="+correo+"&&usuario_u="+user_user+"&&clave_u="+clave+"&&tipo_u="+tipo+"&&estado_u="+estado+"&&pre_u="+pregunta+"&&re_u="+repuesta+"&&jeñal=1";
+             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pag);
+             dispatcher.forward(request, response);
+        
+        }else if(parametro.equals("eliminar")){
+            int del_id = Integer.parseInt(request.getParameter("id"));
+            UsuarioDAO usz = new UsuarioDAOImplementarn();
+            usz.borrarUs(del_id);
+            this.listaUsuarios(request, response);
         }
+        
+        
         
         this.listaUsuarios(request, response);
     }
