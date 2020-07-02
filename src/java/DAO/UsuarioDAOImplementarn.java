@@ -108,7 +108,7 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
             StringBuilder miSQL = new StringBuilder();    
             //Agregar consulta SQL, el id_categoria es autoincrement
             miSQL.append("INSERT INTO tb_usuario(id_usuario, nombre_u, apellido_u, correo, usuario, clave, estado, pregunta, f_registro-) VALUES ('");
-            miSQL.append(usuario.getNombre()+ "','") append.usuario.getApellido()+ "','")append.usuario.getCorreo()+ "','")append.usuario.getCorreo()+ "','")append.usuario.getUsuario()+ "','") append.usuario.getClave()+ "','")append.usuario.getEstado()+ "','")append.usuario.getPregunta()+ "','")append.usuario.getRespuesta()+ "','");
+            miSQL.append(usuario.getNombre()+"','").append(usuario.getApellido()+"','").append(usuario.getCorreo()+"','").append(usuario.getCorreo()+"','").append(usuario.getUsuario()+"','").append(usuario.getClave()+"','").append(usuario.getEstado()+"','").append(usuario.getPregunta()+"','").append(usuario.getRespuesta());
             miSQL.append("')");
             //Invoca al diablo perdon digo el metodo para ejecutar la consulta
             this.conn.ejecutarSQL(miSQL.toString());
