@@ -39,7 +39,7 @@ public class Productos extends HttpServlet {
         ProductoDAO producto = new ProdcutoDAOImplementarn();
         //Crear instancia de sesion se le da true para crear la sesion
         HttpSession sesion = request.getSession(true);
-        sesion.setAttribute("listas", producto.Listar());
+        sesion.setAttribute("listas", producto.Listar2());
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas-productos/listarProductos.jsp");
         dispatcher.forward(request, response);
     }

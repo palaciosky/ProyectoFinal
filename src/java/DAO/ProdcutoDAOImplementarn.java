@@ -48,7 +48,31 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
 
     @Override
     public List<Producto> Listar2() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         this.conn = FactoryConexionDB.open(FactoryConexionDB.MySQL);
+        StringBuilder miSQL = new StringBuilder();
+        miSQL.append("SELECT id_producto, nom_producto, stock, precio, unidad_de_medida, estado_producto, nom_categoria, categoria FROM tb_producto t1 INNER JOIN tb_categoria t2 ON t1.categoria = t2.id_categoria;");
+        List<Producto> lista = new ArrayList<Producto>();
+        try{
+            //Se crea el objeto ResultSet omplemantando el metodo ConsultaSQL 
+            ResultSet resultadoSQL = this.conn.consultaSQL(miSQL.toString());
+            while(resultadoSQL.next()){
+            Producto producto = new Producto();//Declara el objeto categoria
+            //Asigna a cada campo consultado al atributo de la clase
+            producto.setId_producto(resultadoSQL.getInt("id_producto"));
+            producto.setNom_producto(resultadoSQL.getString("nom_producto"));
+            producto.setStock(resultadoSQL.getInt("stock"));
+            producto.setPrecio(resultadoSQL.getFloat("precio"));
+            producto.setUnidad_de_medida(resultadoSQL.getString("unidad_de_medida"));
+            producto.setEstado_producto(resultadoSQL.getInt("estado_producto"));
+            producto.setNomcat(resultadoSQL.getString("nom_categoria"));
+            producto.setCategoria_id(resultadoSQL.getInt("categoria"));
+            
+            lista.add(producto);//Agrega al arreglo cada registro encontrado
+            }
+        }catch(Exception ex){
+        this.conn.cerrarConexion();//pa cerrar conexion señores
+        }
+        return lista;
     }
 
     @Override

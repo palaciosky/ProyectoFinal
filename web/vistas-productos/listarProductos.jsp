@@ -63,7 +63,7 @@
                        <td> $ <%= producto.getPrecio()%> </td>
                        <td> <%= producto.getUnidad_de_medida()%> </td>
                        <td> <%= producto.getEstado_producto()%> </td>
-                        <td> <%= producto.getCategoria_id()%> </td>
+                        <td> <%= producto.getNomcat()%> </td>
                        
                        <td>
                            <a href="<%= request.getContextPath() %>/Producto?opcion=modificar&&id_p=<%= producto.getId_producto() %>&&nombre_p=<%= producto.getNom_producto()%>&&stock_p=<%= producto.getStock() %>&&precio_p=<%= producto.getPrecio()%>&&unidad_p=<%= producto.getUnidad_de_medida()%>&&estado_p=<%= producto.getEstado_producto()%>&&cat_p=<%= producto.getCategoria_id()%>" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 

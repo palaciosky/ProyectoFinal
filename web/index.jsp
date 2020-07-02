@@ -38,6 +38,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6ffe5', end
             <br>
             <h2>Hola Bienvenido a este Registro  </h2>
             <h4><i><%= names %></i></h4>
+            <br>
+            <br>
             
         <br>
         <br>

@@ -20,19 +20,20 @@ public class Prueba2 {
         Prueba2 evaluar = new Prueba2();
         evaluar.listarProductos();
        // evaluar.editarCategoria();
-        evaluar.guardaProducto();
+       // evaluar.guardaProducto();
         //evaluar.eliminarCategoria();
     }
 
     private void listarProductos() {
        ProductoDAO categoria = new ProdcutoDAOImplementarn(); //To change body of generated methods, choose Tools | Templates.
-       List<Producto> listar = categoria.Listar();
+       List<Producto> listar = categoria.Listar2();
         System.out.println("LISTADO DE CATEGORIAS");
         for ( Producto categoriaListar : listar) {
             System.out.println("ID: "+categoriaListar.getId_producto()
             + " NOMBRE: "+ categoriaListar.getNom_producto()
             + " STOCK: "+categoriaListar.getStock()
             +" PRECIO: "+categoriaListar.getPrecio()
+             +" cat: "+categoriaListar.getNomcat()
             +" UNIDAD: "+categoriaListar.getUnidad_de_medida());
         }
     }
