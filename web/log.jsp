@@ -55,7 +55,7 @@ background-color: #66999;
                 </form>
                 <br>
                 <div th:if="${param.error}" class="alert alert-danger" role="alert">
-		          <a href="#" title="¿No tienes cuenta?">¿No tienes cuenta?  </a>
+		          <a href="NUser" title="¿No tienes cuenta?">¿No tienes cuenta?  </a>
           
 		        </div>
 		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
