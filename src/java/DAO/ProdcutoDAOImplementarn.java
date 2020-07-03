@@ -81,10 +81,11 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
         Producto producto = new Producto();//Objeto producto para devolver datos
         StringBuilder miSQL = new StringBuilder();//Construye la consulta
         //Agregar la consulta SQL
-        miSQL.append("SELECT * FROM tb_producto WHERE id_producto ='").append(id_pro_edit);
-        miSQL.append("';");
+        miSQL.append("SELECT * FROM tb_producto WHERE id_producto =").append(id_pro_edit);
+        miSQL.append(";");
         try{// Realiza la consulta
             ResultSet resultadoSQL = this.conn.consultaSQL(miSQL.toString());
+            
             while(resultadoSQL.next()){
             producto.setId_producto(resultadoSQL.getInt("id_producto"));
             producto.setNom_producto(resultadoSQL.getString("nom_producto"));
@@ -136,6 +137,19 @@ public class ProdcutoDAOImplementarn implements ProductoDAO {
             //Invoca al diablo perdon digo el metodo para ejecutar la consulta
             this.conn.ejecutarSQL(miSQL.toString());
             }else if (producto.getId_producto() > 0){//Actualizar, id_categoira mayoress a 0
+                                System.out.println("Entramos...");
+                StringBuilder miSQL = new StringBuilder();
+                miSQL.append("UPDATE tb_producto SET id_producto = ").append(producto.getId_producto());
+                miSQL.append(", nom_producto =  '").append(producto.getNom_producto());
+                miSQL.append("', stock =  ").append(producto.getStock());
+                miSQL.append(", precio =  ").append(producto.getPrecio());
+                miSQL.append(", unidad_de_medida =  '").append(producto.getUnidad_de_medida());
+                miSQL.append("', estado_producto =  ").append(producto.getEstado_producto());
+                miSQL.append(", categoria =  ").append(producto.getCategoria_id());
+                miSQL.append(" WHERE id_producto = ").append(producto.getId_producto()).append(";");
+                //Invocar método para ejecutar la consulta.
+                this.conn.ejecutarSQL(miSQL.toString());
+                System.out.println("Registro modificado correctamente!");
             }
         }catch(Exception e){
             System.out.println("Error en la matriz de consulta");

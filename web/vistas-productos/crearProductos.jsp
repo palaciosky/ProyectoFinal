@@ -93,7 +93,7 @@ if (request.getParameter("señal")!=null) {
             <div class="form-group">
                 <label for="txtCategoriaProducto" class="col-sm-2 control label" >Categoria</label>
                 <div class="col-sm-10" >
-                    <select class="form-control" >    
+                    <select class="form-control" name="txtCategoriaProducto"  >    
                         <% 
                         CategoriaDAO categoria = new CategoriaDAOImplementarn();
                         List<Categoria> catz = categoria.Listar();

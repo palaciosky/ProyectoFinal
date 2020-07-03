@@ -140,6 +140,22 @@ public class UsuarioDAOImplementarn implements UsuarioDAO {
             //Invoca al diablo perdon digo el metodo para ejecutar la consulta
             this.conn.ejecutarSQL(miSQL.toString());
             }else if (usuario.getId()> 0){//Actualizar, id_categoira mayoress a 0
+                                 System.out.println("Entramos...");
+                StringBuilder miSQL = new StringBuilder();
+                miSQL.append("UPDATE tb_usuario SET id_usuario = ").append(usuario.getId());
+                miSQL.append(", nombre_u =  '").append(usuario.getNombre());
+                miSQL.append("', apellido_u =  '").append(usuario.getApellido());
+                miSQL.append("', correo =  '").append(usuario.getCorreo());
+                miSQL.append("', usuario =  '").append(usuario.getUsuario());
+                miSQL.append("', clave =  '").append(usuario.getClave());
+                miSQL.append("', tipo =  ").append(usuario.getTipo());
+                miSQL.append(", estado =  ").append(usuario.getEstado());
+                miSQL.append(", pregunta =  '").append(usuario.getPregunta());
+                miSQL.append("', repuesta =  '").append(usuario.getRespuesta()+"'");
+                miSQL.append(" WHERE id_usuario = ").append(usuario.getId()).append(";");
+                //Invocar método para ejecutar la consulta.
+                this.conn.ejecutarSQL(miSQL.toString());
+                System.out.println("Registro modificado correctamente!");
             }
         }catch(Exception e){
             System.out.println("Error en la matriz de consulta");
