@@ -61,10 +61,3 @@
 
 </footer>
 <!-- Footer -->
-<%
-                }
-      }catch(Exception e){
-      
-          out.print("<center><h2><font color='blue'> Error Cuatrosientoscuatro...</font><hr><h2></center>");
-        }
-   %>

@@ -37,6 +37,10 @@
         <servlet-name>NUser</servlet-name>
         <servlet-class>Controller.NUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Acerca</servlet-name>
+        <servlet-class>Controller.Acerca</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -68,6 +72,10 @@
     <servlet-mapping>
         <servlet-name>NUser</servlet-name>
         <url-pattern>/NUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Acerca</servlet-name>
+        <url-pattern>/Acerca</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
