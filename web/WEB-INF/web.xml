@@ -41,6 +41,10 @@
         <servlet-name>Acerca</servlet-name>
         <servlet-class>Controller.Acerca</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Ventas</servlet-name>
+        <servlet-class>Controller.Ventas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -76,6 +80,10 @@
     <servlet-mapping>
         <servlet-name>Acerca</servlet-name>
         <url-pattern>/Acerca</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ventas</servlet-name>
+        <url-pattern>/Ventas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
