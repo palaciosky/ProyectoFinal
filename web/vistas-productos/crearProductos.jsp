@@ -86,7 +86,13 @@ if (request.getParameter("señal")!=null) {
             <div class="form-group">
                     <label for="txtEstadoProducto" class="col-sm-2 control label" >Estado</label>
                 <div class="col-sm-10" >
-                    <input type="text" class="form-control" name="txtEstadoProducto" value="<%= estado_p %>" required />
+                       <select class="form-control" name="txtEstadoProducto"  >    
+                      
+                        <option value="1" >OK</option>
+                         <option class="text-danger" value="0" >NO</option>
+                       
+                    
+                    </select>
                 </div>        
             </div>
                 

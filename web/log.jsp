@@ -51,7 +51,7 @@ background-color: #66999;
                     <div class="form-group" id="contrasena-group">
                         <input type="password" name="inputPassword" class="form-control" placeholder="Contrasea" />
                     </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"  ></i>  Ingresar </button>
+                    <button type="submit" class="btn btn-primary glyphicon glyphicon-log-in "><i class="fas fa-sign-in-alt "  ></i>  Ingresar </button>
                 </form>
                 <br>
                 <div th:if="${param.error}" class="alert alert-danger" role="alert">

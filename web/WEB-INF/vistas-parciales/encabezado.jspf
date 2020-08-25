@@ -48,27 +48,27 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
           <div class="bg-dark text-white">
-              <h4 style="padding-left:  1.5%">Sistema de Control de Inventario</h4>
+              <h4 style="padding-left:  1.5%">Renta de Vehiculos Villacorta</h4>
     </div>
           
         <li class="nav-item active">
-         <a href="Index" class="nav-link btn btn-outline-secondary "  role="button" >Inicio<span class="sr-only">(current)</span></a>
+         <a href="Index" class="nav-link btn btn-outline-secondary glyphicon glyphicon-home "  role="button" > Inicio<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active  ">
-        <a href="Categorias?opcion=listar" class=" nav-link  btn btn-outline-secondary " role="button" >Categorias</a>
+        <a href="Categorias?opcion=listar" class=" nav-link  btn btn-outline-secondary glyphicon glyphicon-list " role="button" > Categorias</a>
         </li>
         <li class="nav-item active ">
-          <a href="Producto?opcion=listar" class=" nav-link  btn btn-outline-secondary " role="button" >Productos</a>
+          <a href="Producto?opcion=listar" class=" nav-link  btn btn-outline-secondary glyphicon glyphicon-briefcase " role="button" > Productos</a>
         </li>
         <li class="nav-item active ">
-          <a href="Ventas" class=" nav-link  btn btn-success " role="button" >Ventas</a>
+          <a href="Ventas" class=" nav-link  btn btn-success glyphicon glyphicon-shopping-cart" role="button" > Ventas</a>
         </li>
         <li class="nav-item active ">
-            <a href="Usuarios?opcion=listar" class=" nav-link  btn btn-outline-secondary " role="button" >Usuarios</a><br>
+            <a href="Usuarios?opcion=listar" class=" nav-link  btn btn-outline-secondary glyphicon glyphicon-user " role="button" > Usuarios</a><br>
         </li>
        
         <li class="nav-item  ">
-            <a href="#" class=" nav-link  btn btn-danger ml-auto "   role="button" onclick="salir();" >Salir</a>
+            <a href="#" class=" nav-link  btn btn-danger ml-auto glyphicon glyphicon-off "   role="button" onclick="salir();" > Salir</a>
           </li>
       </ul>
       >

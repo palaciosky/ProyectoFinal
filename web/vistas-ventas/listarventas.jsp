@@ -14,7 +14,19 @@
     </head>
     <body>
         <%@include file="../WEB-INF/vistas-parciales/encabezado.jspf" %>
-       EN MANTENIMIENTO XD
+      
+             <h3 class="glyphicon glyphicon-shopping-cart"> Gestor de Ventas y Facturación</h3>
+             <br><h5>Seleccione si desea vender un nuevo producto o registro o Revisar su historial de facturación</h5>
+             <br>
+             
+        <div class="row" >
+            <button type="button" class="btn btn-success btn-lg active  glyphicon glyphicon-tag col md-4 xs-8" style="padding-bottom:  5%"> <br>Vender Producto</button>
+            <div class=".">
+                .
+            </div>  
+            <button type="button" class="btn btn-secondary btn-lg active  glyphicon glyphicon-list col md-4 xs-8" style="padding-bottom:  5%" > <br>Registro Facturas</button>
+        </div>
+       
         <%@include file="../WEB-INF/vistas-parciales/pie.jspf" %>   
     </body>
 </html>

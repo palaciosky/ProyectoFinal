@@ -23,7 +23,8 @@
             <a href="<%= request.getContextPath() %>/Categorias?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button"  >Agregar Categoria +</a>
             <a onclick="javascript:window.imprimirDIV('ID_DIV');" href="#"  class="btn btn-success btn-sm " role="button" ><span class="glyphicon glyphicon-print"> PDF</span> </a>
              <a href="pdf" class="btn btn-danger btn-sm glyphicon glyphicon-print" role="button"  > Imprimir Reg+</a>
-            <h3>Listado de categorias Registradas</h3>
+            <br><br>
+             <h3 class="glyphicon glyphicon-list"> Listado de categorias Registradas</h3>
              <script>
                 function imprimirDIV(ID_DIV) {
                 var ficha = document.getElementById(ID_DIV);
@@ -55,7 +56,13 @@
                         
                        <td> <%= categoria.getId_categoria() %> </td>
                        <td> <%= categoria.getNom_categoria() %> </td>
-                       <td> <%= categoria.getEstado_categoria() %> </td>
+                       <%  if (categoria.getEstado_categoria()== 1){
+                           %>
+                           <td class="glyphicon glyphicon-thumbs-up"> OK </td>
+                        <%
+                        }else{%>
+                        <td class="glyphicon glyphicon-thumbs-down text-danger"> NO</td>
+                        <%} %>
                        <td>
                            <a href="<%= request.getContextPath() %>/Categorias?opcion=modificar&&id=<%= categoria.getId_categoria() %>&&nombre_cat=<%= categoria.getNom_categoria() %>&&estado_cat=<%= categoria.getEstado_categoria() %>" class="btn btn-info btn-sm glyphicon glyphicon-pencil" role="button" ></a> 
                            <a href="<%= request.getContextPath() %>/Categorias?opcion=eliminar&&id=<%= categoria.getId_categoria() %>" class="btn btn-danger btn-sm glyphicon glyphicon-remove" role="button" ></a> 

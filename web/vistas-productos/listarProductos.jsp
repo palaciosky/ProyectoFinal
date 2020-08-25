@@ -23,7 +23,8 @@
             <a href="<%= request.getContextPath() %>/Producto?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button"  >Agregar Producto +</a>
             <a onclick="javascript:window.imprimirDIV('ID_DIV');" href="#"  class="btn btn-success btn-sm " role="button" ><span class="glyphicon glyphicon-print"> PDF</span> </a>
              <a href="pdfp" class="btn btn-danger btn-sm glyphicon glyphicon-print" role="button"  > Imprimir Reg+</a>
-            <h3>Listado de Productos Registrados</h3>
+             <br><br>
+             <h3 class="glyphicon glyphicon-briefcase">  Listado de Productos Registrados</h3>
              <script>
                 function imprimirDIV(ID_DIV) {
                 var ficha = document.getElementById(ID_DIV);
@@ -62,7 +63,13 @@
                        <td> <%= producto.getStock()%> </td>
                        <td> $ <%= producto.getPrecio()%> </td>
                        <td> <%= producto.getUnidad_de_medida()%> </td>
-                       <td> <%= producto.getEstado_producto()%> </td>
+                       <%  if (producto.getEstado_producto() == 1){
+                           %>
+                           <td class="glyphicon glyphicon-thumbs-up"> OK</td>
+                        <%
+                        }else{%>
+                        <td class="glyphicon glyphicon-thumbs-down text-danger"> NO</td>
+                        <%} %>
                         <td> <%= producto.getNomcat()%> </td>
                        
                        <td>

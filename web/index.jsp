@@ -34,7 +34,7 @@ background: linear-gradient(to right, rgba(246,255,229,1) 0%, rgba(255,255,255,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6ffe5', endColorstr='#fffff2', GradientType=1 );" >
         <%@include file="WEB-INF/vistas-parciales/encabezado.jspf" %>
         <div class="" >
-            <h1 class="text-Center text-dark">SISTEMA INVENTARIO WEB</h1>
+            <h1 class="text-Center text-dark">RENTA DE VEHICULOS VILLACORTA</h1>
             <br>
             <h2>Hola Bienvenido a este Registro  </h2>
             <h4><i><%= names %></i></h4>
